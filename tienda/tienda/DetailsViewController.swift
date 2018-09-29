@@ -8,19 +8,41 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController{
     
     @IBOutlet weak var producto: UILabel!
+    @IBOutlet weak var imageProduct: UIImageView!
+    @IBOutlet weak var priceProduct: UILabel!
+    @IBOutlet weak var descriptionProduct: UILabel!
+    @IBOutlet weak var counterProduct: UILabel!
     
-    var vieneDeCatalogo: String = ""
+    @IBOutlet weak var Agree: UIButton!
+    
+    var selectProduct: Producto!
+    
+    var carrito = [Producto]()
+    
+    var counter: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        producto.text = vieneDeCatalogo
+        producto.text = selectProduct.name
+        imageProduct.image = UIImage(named: selectProduct.image)
+        priceProduct.text = "$\(selectProduct.price)"
+        descriptionProduct.text = selectProduct.details
+        counterProduct.text = "\(counter)"
+        //counterProduct.text = String(counter)
         
     }
     
+    @IBAction func Counter(_ sender: UIButton) {
+        counter = counter + 1
+        //counterProduct.text = String(counter)
+        counterProduct.text = "\(counter)"
+        carrito.append(selectProduct)
+        print(carrito[counter-1].name)
+    }
     
     
 }
