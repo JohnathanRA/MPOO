@@ -17,11 +17,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productos.append(Producto(name: "Cloro", price: 20.5, details: "Marca: propia \nUso: para aplicar a lo que quieras, \nContenido: 2 L", image: <#T##String#>))
+        productos.append(Producto(name: "Cloro", price: 14.5, details: "Marca: Cloralex \nUso: para aplicar a lo que quieras \nContenido: 950 ml", image: "Cloro"))
         
-        productos.append(Producto(name: "Detergente", price: 10.0, details: "Marca: propia \nUso: para aplicar a lo que quieras, \nContenido: 500 gr", image: <#T##String#>))
+        productos.append(Producto(name: "Detergente", price: 10.0, details: "Marca: Persil \nUso: para aplicar a lo que quieras \nContenido: 500 gr", image: "Detergente"))
         
-        productos.append(Producto(name: <#T##String#>, price: <#T##Double#>, details: <#T##String#>, image: <#T##String#>))
+        productos.append(Producto(name: "Aromatizante", price: 39.99, details: "Marca: Glade \nUso: para aplicar a lo que quieras \nContenido: 300 ml", image: "Aromatizante"))
         
     }
     
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
         
-        cell.textLabel?.text = productos[indexPath.row]
+        cell.textLabel?.text = "\(productos[indexPath.row].name) - $\(productos[indexPath.row].price)"
         
         return cell
     }
@@ -44,12 +44,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let destino = segue.destination as! DetailsViewController
             
-            destino.vieneDeCatalogo = productos[(indexPath?.row)!]
+            destino.selectProduct = productos[(indexPath?.row)!]
         }
     }
     
     
     @IBAction func unsegueCatalogoViewController(unwindSegue: UIStoryboardSegue) {
+        if let origin = unwindSegue.source as? DetailsViewController{
+            var data = origin.carrito
+        }
     }
     
 }
