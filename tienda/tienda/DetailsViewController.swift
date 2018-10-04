@@ -39,7 +39,7 @@ class DetailsViewController: UIViewController{
         imageProduct.image = UIImage(named: selectProduct.image)
         priceProduct.text = "$\(selectProduct.price)"
         descriptionProduct.text = selectProduct.details
-        counterProduct.text = "\(counter)"
+        counterProduct.text = "X           \(counter)"
         //counterProduct.text = String(counter)
         
         
@@ -48,7 +48,7 @@ class DetailsViewController: UIViewController{
     @IBAction func Counter(_ sender: UIButton) {
         counter = counter + 1
         //counterProduct.text = String(counter)
-        counterProduct.text = "\(counter)"
+        viewDidLoad()
         carrito.append(selectProduct)
     }
     

@@ -63,6 +63,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let destino = segue.destination as! CarViewController
             
             destino.listProducts = data
+            
+            //destino.codProducts = data
+            
+            //destino.productosC = productos
         }
     }
     

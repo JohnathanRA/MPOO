@@ -16,14 +16,44 @@ class CarViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBOutlet weak var tittle: UILabel!
     
+    @IBOutlet weak var total: UILabel!
+    
     var listProducts = [Producto]()
+    
+    //var codProducts = [Int]()
+    
+    //var productosC = [Producto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*var count = 0
+        
+        while count > codProducts.count {
+            if productosC[productosC.count - 1].cod == codProducts[codProducts.count - 1]{
+                listProducts.append(productosC[productosC.count - 1])
+            }else if productosC[productosC.count - 1].cod == codProducts[codProducts.count - 1]{
+                
+            }else {
+                
+            }
+            count = count - 1
+        }*/
+        
         tittle.layer.shadowOffset = CGSize(width: 2, height: 3)
         tittle.layer.shadowOpacity = 0.3
         tittle.layer.shadowRadius = 2
+        
+        var cont = listProducts.count
+        
+        var totalPrice: Double = 0.0
+        
+        while cont > 0 {
+            totalPrice = totalPrice + listProducts[cont - 1].price
+            cont = cont - 1
+        }
+        
+        total.text = "\(totalPrice)"
         
     }
     
@@ -44,15 +74,18 @@ class CarViewController: UIViewController, UITableViewDataSource, UITableViewDel
             
             self.listProducts.remove(at: indexPath.row)
             
-            
             self.tableCar.deleteRows(at: [indexPath], with: .fade)
+            
+            self.viewDidLoad()
+            
         }
+        
+        deleteAction.backgroundColor = UIColor.gray
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
         
         return swipeConfiguration
     }
-    
     
     @IBAction func backList(_ segue: UIStoryboard) {
     }
