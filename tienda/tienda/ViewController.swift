@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tittleShop: UILabel!
+    
     @IBOutlet weak var catalogo: UITableView!
+    
+    @IBOutlet var swipeCar: UISwipeGestureRecognizer!
     
     var productos = [Producto]()
     
@@ -24,6 +28,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         productos.append(Producto(name: "Detergente", price: 10.0, details: "Marca: Persil \nUso: para aplicar a lo que quieras \nContenido: 500 gr", image: "Detergente", cod: 1112))
         
         productos.append(Producto(name: "Aromatizante", price: 39.99, details: "Marca: Glade \nUso: para aplicar a lo que quieras \nContenido: 300 ml", image: "Aromatizante", cod: 1113))
+        
+        tittleShop.layer.shadowOffset = CGSize(width: 2, height: 3)
+        tittleShop.layer.shadowOpacity = 0.3
+        tittleShop.layer.shadowRadius = 2
         
     }
     
@@ -62,7 +70,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func unsegueCatalogo(_ segue: UIStoryboardSegue) {
         if let origin = segue.source as? DetailsViewController{
             data = origin.carrito
-            print(data)
+        }
+        if let origin = segue.source as? CarViewController{
+            data = origin.listProducts
         }
     }//File control Block- Para que no se corrombpa el archivo
     

@@ -11,9 +11,13 @@ import UIKit
 class DetailsViewController: UIViewController{
     
     @IBOutlet weak var producto: UILabel!
+    
     @IBOutlet weak var imageProduct: UIImageView!
+    
     @IBOutlet weak var priceProduct: UILabel!
+    
     @IBOutlet weak var descriptionProduct: UILabel!
+    
     @IBOutlet weak var counterProduct: UILabel!
     
     @IBOutlet weak var Agree: UIButton!
@@ -28,7 +32,7 @@ class DetailsViewController: UIViewController{
         super.viewDidLoad()
         
         producto.layer.shadowOffset = CGSize(width: 2, height: 3)
-        producto.layer.shadowOpacity = 0.5
+        producto.layer.shadowOpacity = 0.3
         producto.layer.shadowRadius = 2
         
         producto.text = selectProduct.name

@@ -43,13 +43,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FABDDEB42165106F00E5EDA8 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		FACEE0A92153F3F2007B311E = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +62,6 @@
 		FACEE0B42153F3F2007B311E /* tienda */ = {
 			isa = PBXGroup;
 			children = (
-				FABDDEB42165106F00E5EDA8 /* New Group */,
 				FACEE0B52153F3F2007B311E /* AppDelegate.swift */,
 				FACEE0B72153F3F2007B311E /* ViewController.swift */,
 				FACEE0B92153F3F2007B311E /* Main.storyboard */,

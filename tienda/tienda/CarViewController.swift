@@ -10,11 +10,20 @@ import UIKit
 
 class CarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var backCar: UISwipeGestureRecognizer!
+    
+    @IBOutlet weak var tableCar: UITableView!
+    
+    @IBOutlet weak var tittle: UILabel!
+    
     var listProducts = [Producto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tittle.layer.shadowOffset = CGSize(width: 2, height: 3)
+        tittle.layer.shadowOpacity = 0.3
+        tittle.layer.shadowRadius = 2
         
     }
     
@@ -30,8 +39,23 @@ class CarViewController: UIViewController, UITableViewDataSource, UITableViewDel
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Borrar") { (action, sourceview, completionHandler) in
+            
+            self.listProducts.remove(at: indexPath.row)
+            
+            
+            self.tableCar.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return swipeConfiguration
+    }
     
     
+    @IBAction func backList(_ segue: UIStoryboard) {
+    }
 
     
 
