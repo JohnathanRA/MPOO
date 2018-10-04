@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA9CABB2215D71BD002B2F39 /* Producto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CABB1215D71BD002B2F39 /* Producto.swift */; };
 		FABDC3A3215AD1D200FC2B90 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC3A2215AD1D200FC2B90 /* DetailsViewController.swift */; };
+		FAC4CBAB21641FE900B4624D /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4CBAA21641FE900B4624D /* CarViewController.swift */; };
 		FACE4D59215EA173008C2014 /* AgreeToCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE4D58215EA173008C2014 /* AgreeToCar.swift */; };
 		FACEE0B62153F3F2007B311E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEE0B52153F3F2007B311E /* AppDelegate.swift */; };
 		FACEE0B82153F3F2007B311E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEE0B72153F3F2007B311E /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		FA9CABB1215D71BD002B2F39 /* Producto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producto.swift; sourceTree = "<group>"; };
 		FABDC3A2215AD1D200FC2B90 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		FAC4CBAA21641FE900B4624D /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		FACE4D58215EA173008C2014 /* AgreeToCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeToCar.swift; sourceTree = "<group>"; };
 		FACEE0B22153F3F2007B311E /* tienda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tienda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEE0B52153F3F2007B311E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FABDDEB42165106F00E5EDA8 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		FACEE0A92153F3F2007B311E = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +69,7 @@
 		FACEE0B42153F3F2007B311E /* tienda */ = {
 			isa = PBXGroup;
 			children = (
+				FABDDEB42165106F00E5EDA8 /* New Group */,
 				FACEE0B52153F3F2007B311E /* AppDelegate.swift */,
 				FACEE0B72153F3F2007B311E /* ViewController.swift */,
 				FACEE0B92153F3F2007B311E /* Main.storyboard */,
@@ -69,6 +79,7 @@
 				FABDC3A2215AD1D200FC2B90 /* DetailsViewController.swift */,
 				FA9CABB1215D71BD002B2F39 /* Producto.swift */,
 				FACE4D58215EA173008C2014 /* AgreeToCar.swift */,
+				FAC4CBAA21641FE900B4624D /* CarViewController.swift */,
 			);
 			path = tienda;
 			sourceTree = "<group>";
@@ -144,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC4CBAB21641FE900B4624D /* CarViewController.swift in Sources */,
 				FACEE0B82153F3F2007B311E /* ViewController.swift in Sources */,
 				FA9CABB2215D71BD002B2F39 /* Producto.swift in Sources */,
 				FACEE0B62153F3F2007B311E /* AppDelegate.swift in Sources */,

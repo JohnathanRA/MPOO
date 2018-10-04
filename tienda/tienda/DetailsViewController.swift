@@ -27,12 +27,17 @@ class DetailsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        producto.layer.shadowOffset = CGSize(width: 2, height: 3)
+        producto.layer.shadowOpacity = 0.5
+        producto.layer.shadowRadius = 2
+        
         producto.text = selectProduct.name
         imageProduct.image = UIImage(named: selectProduct.image)
         priceProduct.text = "$\(selectProduct.price)"
         descriptionProduct.text = selectProduct.details
         counterProduct.text = "\(counter)"
         //counterProduct.text = String(counter)
+        
         
     }
     
@@ -41,7 +46,6 @@ class DetailsViewController: UIViewController{
         //counterProduct.text = String(counter)
         counterProduct.text = "\(counter)"
         carrito.append(selectProduct)
-        print(carrito[counter-1].name)
     }
     
     

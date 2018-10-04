@@ -14,14 +14,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var productos = [Producto]()
     
+    var data = [Producto]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productos.append(Producto(name: "Cloro", price: 14.5, details: "Marca: Cloralex \nUso: para aplicar a lo que quieras \nContenido: 950 ml", image: "Cloro"))
+        productos.append(Producto(name: "Cloro", price: 14.5, details: "Marca: Cloralex \nUso: para aplicar a lo que quieras \nContenido: 950 ml", image: "Cloro", cod: 1111))
         
-        productos.append(Producto(name: "Detergente", price: 10.0, details: "Marca: Persil \nUso: para aplicar a lo que quieras \nContenido: 500 gr", image: "Detergente"))
+        productos.append(Producto(name: "Detergente", price: 10.0, details: "Marca: Persil \nUso: para aplicar a lo que quieras \nContenido: 500 gr", image: "Detergente", cod: 1112))
         
-        productos.append(Producto(name: "Aromatizante", price: 39.99, details: "Marca: Glade \nUso: para aplicar a lo que quieras \nContenido: 300 ml", image: "Aromatizante"))
+        productos.append(Producto(name: "Aromatizante", price: 39.99, details: "Marca: Glade \nUso: para aplicar a lo que quieras \nContenido: 300 ml", image: "Aromatizante", cod: 1113))
         
     }
     
@@ -45,15 +47,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let destino = segue.destination as! DetailsViewController
             
             destino.selectProduct = productos[(indexPath?.row)!]
+            
+            destino.carrito = data
+        }
+        if segue.identifier == "showCar"{
+            
+            let destino = segue.destination as! CarViewController
+            
+            destino.listProducts = data
         }
     }
     
     
-    @IBAction func unsegueCatalogoViewController(unwindSegue: UIStoryboardSegue) {
-        if let origin = unwindSegue.source as? DetailsViewController{
-            var data = origin.carrito
+    @IBAction func unsegueCatalogo(_ segue: UIStoryboardSegue) {
+        if let origin = segue.source as? DetailsViewController{
+            data = origin.carrito
+            print(data)
         }
-    }
+    }//File control Block- Para que no se corrombpa el archivo
     
 }
 

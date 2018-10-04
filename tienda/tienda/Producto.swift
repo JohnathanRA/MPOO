@@ -13,4 +13,5 @@ struct Producto {
     var price: Double //precio del producto
     var details: String //Descripcion del producto
     var image: String //foto generica del producto
+    var cod: Int // Codigo de identificación
 }
