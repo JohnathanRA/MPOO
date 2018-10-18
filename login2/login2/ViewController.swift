@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sigIn = UserDefaults.standard
+        //let sigIn = UserDefaults.standard
         
-        //userName.text
         userName.text = "Ingresa tu usuario aquí"
-        
+        userName.textColor = UIColor.gray
         pass.text = "Ingresa tu contraseña aquí"
+        pass.textColor = UIColor.gray
         
         /*if let data = sigIn.object(forKey: "Name") as? String{
         }
@@ -56,6 +56,7 @@ class ViewController: UIViewController {
             }
         }
         print(accessibility)
+        
         
         
     }

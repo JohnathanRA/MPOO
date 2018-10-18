@@ -66,8 +66,8 @@
 				FAC98F29217631CE00CE6CEC /* Assets.xcassets */,
 				FAC98F2B217631CE00CE6CEC /* LaunchScreen.storyboard */,
 				FAC98F2E217631CE00CE6CEC /* Info.plist */,
-				AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */,
 				FAC98F342176321B00CE6CEC /* SigInViewController.swift */,
+				AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */,
 				FACDCBBA2176819B006F1A98 /* User.swift */,
 			);
 			path = login2;

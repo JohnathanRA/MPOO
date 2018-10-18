@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct User {
-    var userName: [String] = []
-    var pass: [String] = []
+struct User: Codable {
+    var userName: String
+    var pass: String
     var online: Bool
 }
