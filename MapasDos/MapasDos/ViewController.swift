@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate {
+class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate{
     
     @IBOutlet weak var mapa: MKMapView!
     
@@ -64,6 +64,32 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         print(locations.first) //obtiene información del método
     }
     
+    @IBAction func addAnnotation(_ sender: UIButton) {
+        let annotation = GoyoAnnotation() //Annotation -- son pines en el mapa
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.331820, longitude: -122.031180)
+        annotation.title = "Algún lugar"
+        annotation.subtitle = "... de un gran país"
+        annotation.imageURL = "NarutoIcon"
+        
+        mapa.addAnnotation(annotation)
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{
+            return nil
+        }
+        
+        var goyoAnnotationView = mapa.dequeueReusableAnnotationView(withIdentifier: "GoyoAnnotationView")
+        if goyoAnnotationView == nil {
+            goyoAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "GoyoAnnotationView")
+            goyoAnnotationView?.canShowCallout = true
+        } else {
+            goyoAnnotationView?.annotation = annotation
+        }
+        if let goyoAnnotation = annotation as? GoyoAnnotation{
+            goyoAnnotationView?.image = UIImage(named: goyoAnnotation.imageURL)
+        }
+        return goyoAnnotationView
+    }
     
 }
 
