@@ -14,9 +14,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pass: UITextField!
     
+    var listNames = [String]()
+    var listPass = [String]()
+    
+    var accessibility: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let sigIn = UserDefaults.standard
+        let sigIn = UserDefaults.standard
         
         //userName.text
         userName.text = "Ingresa tu usuario aquí"
@@ -32,13 +37,29 @@ class ViewController: UIViewController {
     @IBAction func logIn(_ sender: UIButton) {
         let sigIn = UserDefaults.standard
         
-        if let value = userName.text{
-            sigIn.set(value, forKey: "Name")
+        if let data = sigIn.stringArray(forKey: "Name") {
+            listNames = data
+            listNames.append(userName.text!)
         }
-        if let value = pass.text{
-            sigIn.set(value, forKey: "Pass")
+        if let data = sigIn.stringArray(forKey: "Pass") {
+            listPass = data
+            listPass.append(pass.text!)
         }
+        
+        for i in 1...listNames.count {
+            if userName.text == listNames[i - 1] {
+                if pass.text == listPass[i - 1] {
+                    accessibility = true
+                    return
+                }
+                return
+            }
+        }
+        print(accessibility)
+        
+        
     }
+        
     
 }
 

@@ -22,6 +22,9 @@
                                 <rect key="frame" x="78" y="609" width="236" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Registrate"/>
+                                <connections>
+                                    <segue destination="kch-nZ-M9K" kind="show" id="Gvg-Nl-JiK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingresa a tu cuenta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wov-G2-2XB">
                                 <rect key="frame" x="88" y="37" width="199" height="28"/>
@@ -49,7 +52,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ingresar"/>
                                 <connections>
-                                    <action selector="continue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4VN-lA-lih"/>
+                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qOR-hf-ooA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,6 +67,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="157.59999999999999" y="31.934032983508249"/>
+        </scene>
+        <!--Interface-->
+        <scene sceneID="APe-Vy-OWM">
+            <objects>
+                <viewController title="Interface" id="eIT-Zs-5Yu" customClass="InterfaceViewController" customModule="login2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ZE-VJ-sFK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6TT-wI-5TN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XxV-F5-1Qk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="32"/>
         </scene>
         <!--Sig In View Controller-->
         <scene sceneID="bWf-XM-3LH">
@@ -127,18 +145,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Registrar"/>
                                 <connections>
-                                    <action selector="SigIn:" destination="kch-nZ-M9K" eventType="touchUpInside" id="ghq-KG-KUy"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="mPb-2U-fPN"/>
+                                    <action selector="signUp:" destination="kch-nZ-M9K" eventType="touchUpInside" id="zN7-ET-Yp4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CUN-ZG-iBR"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmationPass" destination="Wz4-SF-ySR" id="mIf-mG-Iac"/>
+                        <outlet property="newUserName" destination="46r-hd-6QQ" id="0gT-HB-Ji7"/>
+                        <outlet property="newUserPass" destination="UQb-hA-Hlv" id="X3t-Xz-KIO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZE-bX-9aR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157.59999999999999" y="805.54722638680664"/>
+            <point key="canvasLocation" x="158" y="840"/>
         </scene>
     </scenes>
 </document>

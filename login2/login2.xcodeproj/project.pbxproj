@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC7BB263217913EF00D9D09A /* InterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */; };
 		FAC98F23217631CC00CE6CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC98F22217631CC00CE6CEC /* AppDelegate.swift */; };
 		FAC98F25217631CD00CE6CEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC98F24217631CD00CE6CEC /* ViewController.swift */; };
 		FAC98F28217631CD00CE6CEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC98F26217631CD00CE6CEC /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewController.swift; sourceTree = "<group>"; };
 		FAC98F1F217631CC00CE6CEC /* login2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = login2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC98F22217631CC00CE6CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC98F24217631CD00CE6CEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				FAC98F29217631CE00CE6CEC /* Assets.xcassets */,
 				FAC98F2B217631CE00CE6CEC /* LaunchScreen.storyboard */,
 				FAC98F2E217631CE00CE6CEC /* Info.plist */,
+				AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */,
 				FAC98F342176321B00CE6CEC /* SigInViewController.swift */,
 				FACDCBBA2176819B006F1A98 /* User.swift */,
 			);
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACDCBBB2176819B006F1A98 /* User.swift in Sources */,
+				AC7BB263217913EF00D9D09A /* InterfaceViewController.swift in Sources */,
 				FAC98F25217631CD00CE6CEC /* ViewController.swift in Sources */,
 				FAC98F23217631CC00CE6CEC /* AppDelegate.swift in Sources */,
 				FAC98F352176321B00CE6CEC /* SigInViewController.swift in Sources */,
