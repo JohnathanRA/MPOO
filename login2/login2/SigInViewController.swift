@@ -16,15 +16,14 @@ class SigInViewController: UIViewController {
     
     @IBOutlet weak var confirmationPass: UITextField!
     
-    var listNames = [String]()
+//    var listNames = [String]()
+//    var listPass = [String]()
     
-    var listPass = [String]()
-    
-    var listUsers = [User]()
+    var listUsersS = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(listUsersS)
     }
     
     @IBAction func signUp(_ sender: UIButton) {
@@ -56,21 +55,24 @@ class SigInViewController: UIViewController {
             }))
             
             self.present(suscefullyAlert, animated: true)
+            //here ends about alert regist
             
-            var cadena = User(userName: newUserName.text!, pass: newUserPass.text!, online: false)
+            listUsersS.append(User(userName: newUserName.text!, pass: newUserPass.text!, online: false))
             
-            signUp.set(try? PropertyListEncoder().encode(listUsers), forKey: "Users")
+            signUp.set(try? PropertyListEncoder().encode(listUsersS), forKey: "Users")
+            //here add and save the new user in the list users
             
         } else {
-            let crashPass = UIAlertController(title: "Upps", message: "Las contraseñas no coinciden", preferredStyle: .alert)
+            //if password is'nt equal
+            let crashPass = UIAlertController(title: "Upps 😪", message: "Las contraseñas no coinciden", preferredStyle: .alert)
             
             crashPass.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
             
             self.present(crashPass, animated: true)
         }
         
-        
-        
     }
     
+    @IBAction func cancel(_ sender: UIButton) {
+    }
 }
