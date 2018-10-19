@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC7BB263217913EF00D9D09A /* InterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */; };
+		FAAD3B63217A4C4400EFB519 /* SignUpButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD3B62217A4C4400EFB519 /* SignUpButtons.swift */; };
 		FAC98F23217631CC00CE6CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC98F22217631CC00CE6CEC /* AppDelegate.swift */; };
 		FAC98F25217631CD00CE6CEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC98F24217631CD00CE6CEC /* ViewController.swift */; };
 		FAC98F28217631CD00CE6CEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC98F26217631CD00CE6CEC /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewController.swift; sourceTree = "<group>"; };
+		FAAD3B62217A4C4400EFB519 /* SignUpButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtons.swift; sourceTree = "<group>"; };
 		FAC98F1F217631CC00CE6CEC /* login2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = login2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC98F22217631CC00CE6CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC98F24217631CD00CE6CEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				FAC98F342176321B00CE6CEC /* SigInViewController.swift */,
 				AC7BB262217913EF00D9D09A /* InterfaceViewController.swift */,
 				FACDCBBA2176819B006F1A98 /* User.swift */,
+				FAAD3B62217A4C4400EFB519 /* SignUpButtons.swift */,
 			);
 			path = login2;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				FAC98F25217631CD00CE6CEC /* ViewController.swift in Sources */,
 				FAC98F23217631CC00CE6CEC /* AppDelegate.swift in Sources */,
 				FAC98F352176321B00CE6CEC /* SigInViewController.swift in Sources */,
+				FAAD3B63217A4C4400EFB519 /* SignUpButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

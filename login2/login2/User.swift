@@ -11,5 +11,5 @@ import Foundation
 struct User: Codable {
     var userName: String
     var pass: String
-    var online: Bool
+    var online: Bool = false
 }

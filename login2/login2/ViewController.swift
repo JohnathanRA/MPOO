@@ -14,53 +14,113 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pass: UITextField!
     
-    var listNames = [String]()
-    var listPass = [String]()
+    var listUsers = [User]()
     
-    var accessibility: Bool = false
+    var accessibility: User!
     
+    var open: Bool! = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let sigIn = UserDefaults.standard
-        
-        userName.text = "Ingresa tu usuario aquí"
-        userName.textColor = UIColor.gray
-        pass.text = "Ingresa tu contraseña aquí"
-        pass.textColor = UIColor.gray
-        
-        /*if let data = sigIn.object(forKey: "Name") as? String{
+        let sigIn = UserDefaults.standard
+        if let listData = sigIn.value(forKey: "Users") as? Data{
+            
+            let temp = try? PropertyListDecoder().decode(Array<User>.self, from: listData)
+            print("------")
+            listUsers = temp!
+            print(listUsers)
+            print("------")
+            
         }
-        if let data = sigIn.object(forKey: "Pass") as? String{
-        }*/
+        //Data recovery
     }
 
     @IBAction func logIn(_ sender: UIButton) {
-        let sigIn = UserDefaults.standard
         
-        if let data = sigIn.stringArray(forKey: "Name") {
-            listNames = data
-            listNames.append(userName.text!)
-        }
-        if let data = sigIn.stringArray(forKey: "Pass") {
-            listPass = data
-            listPass.append(pass.text!)
-        }
+        viewDidLoad()
         
-        for i in 1...listNames.count {
-            if userName.text == listNames[i - 1] {
-                if pass.text == listPass[i - 1] {
-                    accessibility = true
-                    return
+        if userName.text == "" {
+            let alertNil = UIAlertController(title: "Upss 😠", message: "Debes llenar ambos campos", preferredStyle: .alert)
+            
+            alertNil.addAction(UIAlertAction(title: "está bien", style: .default, handler: nil))
+            
+            self.present(alertNil,animated: true)
+        } else if pass.text == "" {
+            let alertNil = UIAlertController(title: "Upss 😠", message: "Debes llenar ambos campos", preferredStyle: .alert)
+            
+            alertNil.addAction(UIAlertAction(title: "está bien", style: .default, handler: nil))
+            
+            self.present(alertNil,animated: true)
+        } else {
+            let sigIn = UserDefaults.standard
+            
+            if listUsers.count == 0{
+                accessibility = User(userName: "", pass: "", online: false)
+            } else {
+                for i in 1...listUsers.count{
+                    if listUsers[i - 1].online == true {
+                        accessibility = User(userName: listUsers[i - 1].userName, pass: listUsers[i - 1].pass, online: true)
+                        print("aun no cierra")
+                        open = true
+                    }
                 }
-                return
+                if open == false{
+                    accessibility = User(userName: "", pass: "", online: false)
+                }
+            }
+            //Hay alguien?
+            print("-----")
+            print("holaaaaaaa")
+            print(accessibility)
+            print("-----")
+            
+            if accessibility.online == false {
+                //Le da acceso
+                for i in 1...listUsers.count {
+                    if userName.text == listUsers[i - 1].userName {
+                        if pass.text == listUsers[i - 1].pass {
+                            accessibility = User(userName: listUsers[i - 1].userName, pass: listUsers[i - 1].pass, online: true)
+                            listUsers[i - 1].online = true
+                            sigIn.set(try? PropertyListEncoder().encode(listUsers), forKey: "Users")
+                            //cambia el estado del usuario
+                            self.performSegue(withIdentifier: "welcome", sender: self)
+                            //le da acceso al usuario
+                            return
+                        }
+                        let alertPass = UIAlertController(title: "Upss 🙄", message: "Lo sentimos, El usuario o la contraseña no son correctos", preferredStyle: .alert)
+                        
+                        alertPass.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                        
+                        self.present(alertPass,animated: true)
+                        return
+                    }
+                }
+            } else if accessibility.userName == userName.text {
+                performSegue(withIdentifier: "welcome", sender: self)
+            } else {
+                let alertAccessibility = UIAlertController(title: "Upss 😥", message: "Lo sentimos, un usuario aún no cierra sesión", preferredStyle: .alert)
+                
+                alertAccessibility.addAction(UIAlertAction(title: "Ni modo", style: .default, handler: nil))
+                
+                self.present(alertAccessibility,animated: true)
             }
         }
-        print(accessibility)
-        
-        
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "regist"{
+            let ofSignIn = segue.destination as? SigInViewController
+            
+            ofSignIn?.listUsersS = listUsers
+        }
+        if segue.identifier == "welcome"{
+            let ofWelcome = segue.destination as? InterfaceViewController
+            
+            ofWelcome?.userWelcome = accessibility
+            
+            ofWelcome?.listUsersW = listUsers
+        }
     }
         
     
 }
-
