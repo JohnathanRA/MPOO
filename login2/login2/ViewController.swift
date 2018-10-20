@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     var accessibility: User!
     
-    var open: Bool! = false
+    var open: Bool!//delete inicialitation
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,7 @@ class ViewController: UIViewController {
             
         }
         //Data recovery
+        opem = false
     }
 
     @IBAction func logIn(_ sender: UIButton) {
