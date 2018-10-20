@@ -86,14 +86,13 @@ class ViewController: UIViewController {
                             //cambia el estado del usuario
                             self.performSegue(withIdentifier: "welcome", sender: self)
                             //le da acceso al usuario
-                            return
                         }
                         let alertPass = UIAlertController(title: "Upss 🙄", message: "Lo sentimos, El usuario o la contraseña no son correctos", preferredStyle: .alert)
                         
                         alertPass.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
                         
                         self.present(alertPass,animated: true)
-                        return
+                        //Delete return
                     }
                 }
             } else if accessibility.userName == userName.text {
