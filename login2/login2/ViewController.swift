@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             
         }
         //Data recovery
-        opem = false
+        open = false
     }
 
     @IBAction func logIn(_ sender: UIButton) {
